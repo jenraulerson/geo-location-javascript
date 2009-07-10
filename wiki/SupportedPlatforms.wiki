@@ -1,10 +1,16 @@
 #summary Supported Platforms of the Toolkit
 #labels Featured
 
-= Supported Platforms =
+=Supported Platforms=
 
-  * Mobile OS X 3.0
+  * iPhone OS 3.0
   * Google Gears (Android, Windows Mobile)
-  * BlackBerry® Device Software version 4.1 or later
+  * BlackBerry Device Software 4.1 and greater 
 
- 
+*_If you think we are missing a platform please leave a comment at the bottom of this page._*
+
+==iPhone OS 3.0==
+Since the  release of the OS 3.0 [http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariWebContent/GettingGeographicalLocations/GettingGeographicalLocations.html Geographic location classes] are available in javascript. As with native applications the user is asked for permission per session. *Note:* This doesn't work in the simulator that ships with the SDK.
+
+==Google Gears==
+Gears is a javascript framework available for Android, Windows Mobile (IE Mobile, Opera Mobile), Mac (Firefox, Safari), Linux and Windows . One of its cores is the [http://code.google.com/apis/gears/api_geolocation.html Geolocation API]. On the mobile phone it asks the user once for permission per site and user, so not every session as in the iPhone OS 3.0. To set the location in the Simulator that ships with the Android SDK please you need to [http://developer.android.com/guide/topics/location/index.html telnet into the SDK and issue a geo statement], much easier then it sounds. It works _most_ of the time, sometimes you need to try multiple telnet sessions to make for android to register the location.
