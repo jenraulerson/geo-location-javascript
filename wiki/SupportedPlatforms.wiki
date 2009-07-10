@@ -5,7 +5,7 @@
 
   * [#iPhone_OS_3.0 iPhone OS 3.0]
   * [#Google_Gears Google Gears (Android, Windows Mobile)]
-  * [#BlackBerry_Device_Software_4.1_and_greater BlackBerry Device Software 4.1 and greater]
+  * [#BlackBerry Device Software 4.1 and greater]
 
 *_If you think we are missing a platform please leave a comment at the bottom of this page. THANK YOU!_*
 
