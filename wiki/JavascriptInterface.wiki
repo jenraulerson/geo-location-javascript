@@ -1,7 +1,7 @@
 #summary Description of the javascript usage
 #labels Featured
 
-==Simple Usage in 3 Steps==
+=Simple Usage in 3 Steps=
 
 1.) Include libraries:
 {{{
@@ -26,4 +26,10 @@ The error_call callback parameter provides at least:
 {message:AMessageDescribingTheError}
 }}}
 
-Both callback parameters can contain more information if the underlying implementation provides more.
+Both callback parameters can contain more information if the underlying implementation provides more. Have a look at the sample usage in the URLs below.
+
+= Sample URLs ==
+
+ * [http://www.merkwelt.com/people/stan/geo_js/sample.html Very simple page that provides a status alert box ]
+ * [http://www.merkwelt.com/people/stan/geo_js/sample_with_map.html Show the users location in an embedded google map(v3), requires advanced browsers ]
+ * [http://www.merkwelt.com/people/stan/geo_js/sample_with_map_and_simulated_user.html Simulates a moving user in an embedded google map(v3), requires advanced browsers ]
