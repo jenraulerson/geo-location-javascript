@@ -1,0 +1,10 @@
+#summary Supported Platforms of the Toolkit
+#labels Featured
+
+= Supported Platforms =
+
+  * Mobile OS X 3.0
+  * Google Gears (Android, Windows Mobile)
+  * BlackBerry® Device Software version 4.1 or later
+
+ 
