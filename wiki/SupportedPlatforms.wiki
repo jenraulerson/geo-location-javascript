@@ -3,7 +3,7 @@
 
 =Supported Platforms=
 
-  * iPhone OS 3.0
+  * [#iPhone_OS_3.0 iPhone OS 3.0]
   * Google Gears (Android, Windows Mobile)
   * BlackBerry Device Software 4.1 and greater 
 
