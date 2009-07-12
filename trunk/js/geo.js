@@ -10,7 +10,14 @@ function handleBlackBerryLocation()
 		}
 		else
 		{
-			bb_successCallback({coords: {latitude:blackberry.location.latitude,longitude:blackberry.location.longitude}});
+			var timestamp=null;
+			//only available with 4.6 and later
+			//http://na.blackberry.com/eng/deliverables/8861/blackberry_location_568404_11.jsp
+			if (blackberry.location.timestamp)
+			{
+				timestamp=new Date(blackberry.location.timestamp);
+			}
+			bb_successCallback({timestamp:timestamp, coords: {latitude:blackberry.location.latitude,longitude:blackberry.location.longitude}});
 		}
 		//since blackberry.location.removeLocationUpdate();
 		//is not working as described http://na.blackberry.com/eng/deliverables/8861/blackberry_location_removeLocationUpdate_568409_11.jsp
