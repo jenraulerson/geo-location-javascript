@@ -1,7 +1,7 @@
 #summary Description of the javascript usage
 #labels Featured
 
-=Simple Usage in 3 Steps=
+=3 Easy Steps=
 
 1.) Include libraries:
 {{{
