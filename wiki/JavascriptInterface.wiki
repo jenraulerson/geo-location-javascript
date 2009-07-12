@@ -17,13 +17,13 @@ var supported = geo_position_js.init(); //true / false
 {{{
 geo_position_js.getCurrentPosition(success_callback,error_callback);
 }}}
-The callback parameters are aligned to the [http://dev.w3.org/geo/api/spec-source.html W3 Geolocation API Specification]. The success_call callback parameter provides at least:  
+The callback parameters are _aligned_ to the [http://dev.w3.org/geo/api/spec-source.html W3 Geolocation API Specification]. The success_call callback parameter provides at least:  
 {{{
-{coords:{latitude:theLatitude,longitude}}
+{coords:{latitude:theLatitude,longitude:theLongitude},timestamp:whenTheLocationWasRetrieved}
 }}}
 The error_call callback parameter provides at least:
 {{{
-{message:AMessageDescribingTheError}
+{message:AMessageDescribingTheError,code:theErrorCode}
 }}}
 
 Both callback parameters can contain more information if the underlying implementation provides more. Have a look at the sample usage in the URLs below.
