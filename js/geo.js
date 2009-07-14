@@ -76,7 +76,6 @@ var geo_position_js=function() {
 				pub.getCurrentPosition = function(successCallback, errorCallback, options)
 				{
 					function callback(transId, eventCode, result) {
-					
 					    if (eventCode == 4) 
 						{
 					        errorCallback({message:"Position unavailable", code:2});
@@ -91,7 +90,7 @@ var geo_position_js=function() {
 				    var criteria = new Object();
     				criteria.LocationInformationClass = "BasicLocationInformation";					
 					//make the call
-					provider.ILocation.GetLocation(callback,criteria);
+					provider.ILocation.GetLocation(criteria,callback);					
 				}
 			}									
 			else if(typeof(window.blackberry)!="undefined" && blackberry.location.GPSSupported)
