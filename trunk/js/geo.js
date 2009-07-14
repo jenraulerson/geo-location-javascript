@@ -6,7 +6,9 @@ function handleBlackBerryLocation()
 	{
 		if(blackberry.location.latitude==0 && blackberry.location.longitude==0)
 		{
-			bb_errorCallback({message:"Permission denied", code:1});
+			//http://dev.w3.org/geo/api/spec-source.html#position_unavailable_error
+			//POSITION_UNAVAILABLE (numeric value 2)
+			bb_errorCallback({message:"Position unavailable", code:2});
 		}
 		else
 		{
@@ -53,10 +55,14 @@ var geo_position_js=function() {
 			{
 				provider=geo_position_js_simulator;
 			}		
+			else if (typeof(bondi)!="undefined" && typeof(bondi.geolocation)!="undefined")
+			{
+				provider=bondi.geolocation;
+			}
 			else if (typeof(navigator.geolocation)!="undefined")
 			{
 				provider=navigator.geolocation;
-			}
+			}			
 			else if(typeof(window.google)!="undefined")
 			{						
 				provider=google.gears.factory.create('beta.geolocation');
