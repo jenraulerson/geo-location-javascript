@@ -62,12 +62,38 @@ var geo_position_js=function() {
 			else if (typeof(navigator.geolocation)!="undefined") 
 			{
 				provider=navigator.geolocation;
-			}			
+			}
 			else if(typeof(window.google)!="undefined")
 			{						
 				provider=google.gears.factory.create('beta.geolocation');
 											
-			}
+			}			
+			else if (typeof(device)!="undefined" && typeof(device.getServiceObject)!="undefined") 
+			{
+				provider=device.getServiceObject("Service.Location", "ILocation");
+				
+				//override default method implementation				
+				pub.getCurrentPosition = function(successCallback, errorCallback, options)
+				{
+					function callback(transId, eventCode, result) {
+					
+					    if (eventCode == 4) 
+						{
+					        errorCallback({message:"Position unavailable", code:2});
+					    }
+						else
+						{
+							//no timestamp of location given?
+							successCallback({timestamp:null, coords: {latitude:result.ReturnValue.Latitude, longitude:result.ReturnValue.Longitude, altitude:result.ReturnValue.Altitude,heading:result.ReturnValue.Heading}});
+					 	}
+					}
+					//location criteria
+				    var criteria = new Object();
+    				criteria.LocationInformationClass = "BasicLocationInformation";					
+					//make the call
+					provider.ILocation.GetLocation(callback,criteria);
+				}
+			}									
 			else if(typeof(window.blackberry)!="undefined" && blackberry.location.GPSSupported)
 			{
 
