@@ -21,5 +21,5 @@ Gears is a javascript framework available for Android, Windows Mobile (IE Mobile
 ==BlackBerry Device Software 4.1==
 Since the release of the Device Software 4.1 (i.e. Bold,8800,8820,...) BlackBerry supports [http://na.blackberry.com/eng/deliverables/8861/blackberry_location_568404_11.jsp javascript access to the GPS location]. Permission is asked once per session. In order to use it on your phone make sure that in javascript location support is enabled (Browser->Options->General Properties). To set the location in the Simulator set the GPS location in the Simulate pull down menu.
 
-==BondiWidgets1.0==
+==Bondi Widgetsm1.0==
 This framework which implements the W3C geolocation API is supported.
