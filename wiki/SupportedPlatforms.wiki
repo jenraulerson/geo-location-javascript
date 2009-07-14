@@ -26,4 +26,4 @@ Since the release of the Device Software 4.1 (i.e. Bold,8800,8820,...) BlackBerr
 The [http://www.forum.nokia.com/Technology_Topics/Web_Technologies/Web_Runtime/ Nokia WRT ] is supported by the framework. Permission is asked once per session. You only need to include geo.js in your main html page.
 
 ==Bondi Widgets 1.0==
-The [http://bondi.omtp.org/default.aspx boni widgets] framework which implements the W3C geolocation API is supported.
+The [http://bondi.omtp.org/default.aspx Bondi Widgets framework] which implements the W3C geolocation API is supported.
