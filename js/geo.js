@@ -59,7 +59,7 @@ var geo_position_js=function() {
 			{
 				provider=bondi.geolocation;
 			}
-			else if (typeof(navigator.geolocation)!="undefined")
+			else if (typeof(navigator.geolocation)!="undefined") 
 			{
 				provider=navigator.geolocation;
 			}			
