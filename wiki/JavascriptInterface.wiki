@@ -1,4 +1,3 @@
-#summary Description of the javascript usage
 #labels Featured
 Include library in your html page:
 {{{
