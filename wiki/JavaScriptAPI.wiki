@@ -27,7 +27,7 @@ The error_call callback parameter provides at least:
 
 Both callback parameters can contain more information if the acutal platform provides more. 
 
-= Sample URLs ==
+=== Sample URLs ===
 
  * [http://www.merkwelt.com/people/stan/geo_js/sample.html Very simple page that provides a status alert box ]
  * [http://www.merkwelt.com/people/stan/geo_js/sample_with_map.html Show the users location in an embedded google map(v3), requires advanced browsers ]
