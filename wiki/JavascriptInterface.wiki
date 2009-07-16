@@ -26,7 +26,7 @@ The error_call callback parameter provides at least:
 {message:AMessageDescribingTheError,code:theErrorCode}
 }}}
 
-Both callback parameters can contain more information if the underlying implementation provides more. Have a look at the sample usage in the URLs below.
+Both callback parameters can contain more information if the acutal platform provides more. 
 
 = Sample URLs ==
 
