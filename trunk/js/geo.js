@@ -67,7 +67,65 @@ var geo_position_js=function() {
 			{						
 				provider=google.gears.factory.create('beta.geolocation');
 											
-			}			
+			}	
+			else if (typeof(Mojo.Service.Request)!="Mojo.Service.Request")
+			{
+				provider=true;
+				pub.getCurrentPosition = function(successCallback, errorCallback, options)
+				{
+				  
+				parameters={};
+				if(options)
+				{
+					 //http://developer.palm.com/index.php?option=com_content&view=article&id=1673#GPS-getCurrentPosition
+					 if (options.enableHighAccuracy && options.enableHighAccuracy==true)
+					 {
+						parameters.accuracy=1;					
+					 }
+					 if (options.maximumAge)
+					 {
+						parameters.maximumAge=options.maximumAge;					
+					 }
+					 if (options.responseTime)
+					 {
+						if(options.responseTime<5)
+						{
+							parameters.responseTime=1;
+						}
+						else if (options.responseTime<20)
+						{
+							parameters.responseTime=2;
+						}					
+						else 
+						{
+							parameters.timeout=3;
+						}						
+					 }															
+				}
+				
+				 	
+				 r=new Mojo.Service.Request('palm://com.palm.location', {
+				 	method:"getCurrentPosition",
+				 	    parameters:parameters,
+				 	    onSuccess: function(p){successCallback({timestamp:p.timestamp, coords: {latitude:p.latitude, longitude:p.longitude,heading:p.heading}});},
+				 	    onFailure: function(e){
+								if (e.errorCode==1)
+								{
+									errorCallback({code:3,message:"Timeout"});
+								}
+								else if (e.errorCode==2)
+								{
+									errorCallback({code:2,message:"Position Unavailable"});
+								}
+								else 
+								{
+									errorCallback({code:0,message:"Unknown Error: webOS-code"+errorCode});
+								}							
+							}
+				 	    });				
+				}
+				
+			}
 			else if (typeof(device)!="undefined" && typeof(device.getServiceObject)!="undefined") 
 			{
 				provider=device.getServiceObject("Service.Location", "ILocation");
