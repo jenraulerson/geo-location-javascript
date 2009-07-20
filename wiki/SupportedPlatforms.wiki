@@ -8,6 +8,8 @@
   * [#Device_Software_4.1 BlackBerry Device Software 4.1 and greater]
   * [#Nokia_Web_Runtime_Toolkit Nokia Web Runtime Toolkit]
   * [#Bondi_Widgets_1.0 Bondi Widgets v1.0]
+  * [#webOS_Application_Platform]
+
 
 *_If you think we are missing a platform please leave a comment at the bottom of this page. THANK YOU!_*
 
@@ -23,7 +25,10 @@ Gears is a javascript framework available for Android, Windows Mobile (IE Mobile
 Since the release of the Device Software 4.1 (i.e. Bold,8800,8820,...) BlackBerry supports [http://na.blackberry.com/eng/deliverables/8861/blackberry_location_568404_11.jsp javascript access to the GPS location]. Permission is asked once per session. In order to use it on your phone make sure that in javascript location support is enabled (Browser->Options->General Properties). To set the location in the Simulator set the GPS location in the Simulate pull down menu.
 
 ==Nokia Web Runtime Toolkit==
-The [http://www.forum.nokia.com/Technology_Topics/Web_Technologies/Web_Runtime/ Nokia WRT ] is supported by the framework. Permission is asked once per session. You only need to include geo.js in your main html page.
+The [http://www.forum.nokia.com/Technology_Topics/Web_Technologies/Web_Runtime/ Nokia WRT ] is supported by the framework. Permission is asked once per session. You only need to include geo.js in your main html page. Note: The Nokia WRT does not provide a timestamp with the geo location.
+
+==webOS Application Platform]==
+The [http://en.wikipedia.org/wiki/WebOS webOS] application platform is now supported by the framework. You need to put the geo.js in your application folder and include it in the main index.html file. All [http://dev.w3.org/geo/api/spec-source.html#position-options w3c position opyions] are supported.
 
 ==Bondi Widgets 1.0==
 The [http://bondi.omtp.org/default.aspx Bondi Widgets framework] which implements the W3C geolocation API is supported.
