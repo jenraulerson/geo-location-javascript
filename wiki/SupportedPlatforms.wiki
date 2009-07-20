@@ -27,7 +27,7 @@ Since the release of the Device Software 4.1 (i.e. Bold,8800,8820,...) BlackBerr
 ==Nokia Web Runtime Toolkit==
 The [http://www.forum.nokia.com/Technology_Topics/Web_Technologies/Web_Runtime/ Nokia WRT ] is supported by the framework. Permission is asked once per session. You only need to include geo.js in your main html page. Note: The Nokia WRT does not provide a timestamp with the geo location.
 
-==[webOS Application Platform]==
+==webOS Application Platform==
 The [http://en.wikipedia.org/wiki/WebOS webOS] application platform is now supported by the framework. You need to put the geo.js in your application folder and include it in the main index.html file. All [http://dev.w3.org/geo/api/spec-source.html#position-options w3c position opyions] are supported.
 
 ==Bondi Widgets 1.0==
