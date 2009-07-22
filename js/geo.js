@@ -62,6 +62,28 @@ var geo_position_js=function() {
 			else if (typeof(navigator.geolocation)!="undefined") 
 			{
 				provider=navigator.geolocation;
+				pub.getCurrentPosition = function(successCallback, errorCallback, options)
+				{
+				
+					function _successCallback(p)
+					{
+						
+						//for mozilla geode,it returns the coordinates slightly differently
+						if(typeof(p.latitude)!="undefined")
+						{						
+							successCallback({timestamp:p.timestamp, coords: {latitude:p.latitude,longitude:p.longitude}});
+
+						}
+						else
+						{
+							successCallback(p);
+						}
+						
+					}
+					provider.getCurrentPosition(_successCallback,errorCallback,options);
+				}			
+				
+				
 			}
 			else if(typeof(window.google)!="undefined")
 			{						
