@@ -9,7 +9,7 @@
   * [#Nokia_Web_Runtime_Toolkit Nokia Web Runtime Toolkit]
   * [#Bondi_Widgets_1.0 Bondi Widgets v1.0]
   * [#webOS_Application_Platform webOS Application Platform]
-  * [#TorchMobileIrisBrowser Torch Mobile Iris Browser] 
+  * [#Torch_Mobile_Iris_Browser Torch Mobile Iris Browser] 
 
 
 *_If you think we are missing a platform please leave a comment at the bottom of this page. THANK YOU!_*
