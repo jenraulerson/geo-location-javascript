@@ -9,6 +9,7 @@
   * [#Nokia_Web_Runtime_Toolkit Nokia Web Runtime Toolkit]
   * [#Bondi_Widgets_1.0 Bondi Widgets v1.0]
   * [#webOS_Application_Platform webOS Application Platform]
+  * [#torchMobileIrisBrowser Torch Mobile Iris Browser] 
 
 
 *_If you think we are missing a platform please leave a comment at the bottom of this page. THANK YOU!_*
@@ -31,3 +32,6 @@ The [http://en.wikipedia.org/wiki/WebOS webOS] application platform is now suppo
 
 ==Bondi Widgets 1.0==
 The [http://bondi.omtp.org/default.aspx Bondi Widgets framework] which implements the W3C geolocation API is supported.
+
+==Torch Mobile Iris Browser==
+The [http://www.irisbrowser.com/ Iris Browser] which implements the W3C geolocation API is supported.
