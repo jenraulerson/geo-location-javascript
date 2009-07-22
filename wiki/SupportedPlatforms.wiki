@@ -10,6 +10,7 @@
   * [#Bondi_Widgets_1.0 Bondi Widgets v1.0]
   * [#webOS_Application_Platform webOS Application Platform]
   * [#Torch_Mobile_Iris_Browser Torch Mobile Iris Browser] 
+  * [#Mozilla_Geode Mozilla Geode]
 
 
 *_If you think we are missing a platform please leave a comment at the bottom of this page. THANK YOU!_*
@@ -35,3 +36,6 @@ The [http://bondi.omtp.org/default.aspx Bondi Widgets framework] which implement
 
 ==Torch Mobile Iris Browser==
 The [http://www.irisbrowser.com/ Iris Browser] which implements the W3C geolocation API is supported.
+
+==Mozilla Geode==
+The [http://labs.mozilla.com/2008/10/introducing-geode/ Mozilla Geode Plugin] which implements the W3C geolocation API is supported. Only a small change for handling the incoming position had to be injected. Also if you hit "Nothing" in the browser permission dialog you won't get an error message callback, that is a general Geode issue.
