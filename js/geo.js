@@ -196,7 +196,7 @@ var geo_position_js=function()
 					}
 				}
 				else if (typeof(window.blackberry) != "undefined" && blackberry.location.GPSSupported) {
-					ç
+					
 					// set to autonomous mode
 					blackberry.location.setAidMode(2);
 					
