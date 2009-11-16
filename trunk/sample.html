@@ -7,12 +7,10 @@
 <body>
 	<b>Javascript geo sample</b>
 	<script>
-		if(geo_position_js.init())
-		{
-			geo_position_js.getCurrentPosition(success_callback,error_callback);
+		if(geo_position_js.init()){
+			geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true});
 		}
-		else
-		{
+		else{
 			alert("Functionality not available");
 		}
 

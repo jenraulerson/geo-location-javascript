@@ -23,7 +23,7 @@ function initialize()
 	if(geo_position_js.init())
 	{
 		document.getElementById('current').innerHTML="Receiving...";
-		geo_position_js.getCurrentPosition(show_position,function(){document.getElementById('current').innerHTML="Couldn't get location"});
+		geo_position_js.getCurrentPosition(show_position,function(){document.getElementById('current').innerHTML="Couldn't get location"},{enableHighAccuracy:true});
 	}
 	else
 	{
