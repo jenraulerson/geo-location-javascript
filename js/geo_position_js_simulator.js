@@ -1,8 +1,13 @@
 /*!
- * 
- * $Rev$: 
- * $Author$:
- * $Date$:    
+ * geo-location-javascript v0.4.1  Simulator
+ * http://code.google.com/p/geo-location-javascript/
+ *
+ * Copyright (c) 2009 Stan Wiechers
+ * Licensed under the MIT licenses.
+ *
+ * Revision: $Rev$: 
+ * Author: $Author$:
+ * Date: $Date$:    
  */
 var geo_position_js_simulator=function(){
 
