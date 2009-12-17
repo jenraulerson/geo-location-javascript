@@ -1,3 +1,9 @@
+/*!
+ * 
+ * Revision: $Rev$: 
+ * Author: $Author$:
+ * Date: $Date$:    
+ */
 var bb_successCallback;
 var bb_errorCallback;
 
@@ -22,9 +28,13 @@ function handleBlackBerryLocation()
 			}
 			bb_successCallback({timestamp:timestamp, coords: {latitude:blackberry.location.latitude,longitude:blackberry.location.longitude}});
 		}
-		//since blackberry.location.removeLocationUpdate();
-		//is not working as described http://na.blackberry.com/eng/deliverables/8861/blackberry_location_removeLocationUpdate_568409_11.jsp
-		//the callback are set to null to indicate that the job is done
+		//If you have passed the method a function, you can cancel the callback using blackberry.location.removeLocationUpdate(). 
+		//If you have passed a string, the callback cannot be removed.
+		//http://docs.blackberry.com/en/developers/deliverables/11849/blackberry_location_onLocationUpdate_568407_11.jsp
+		if(parseFloat(navigator.appVersion)>=4.6)
+		{
+			blackberry.location.removeLocationUpdate();
+		}
 		
 		bb_successCallback = null;
 		bb_errorCallback = null;		
@@ -54,13 +64,45 @@ var geo_position_js=function()
 			else if (typeof(bondi) != "undefined" && typeof(bondi.geolocation) != "undefined") {
 				provider = bondi.geolocation;
 			}
+
+			else if (typeof(window.google) != "undefined") 
+			{
+				provider = google.gears.factory.create('beta.geolocation');	
+				pub.getCurrentPosition = function(successCallback, errorCallback, options){			
+				
+					try
+					{
+						function _successCallback(p){
+							if (typeof(p.latitude) != "undefined") {
+								successCallback({
+									timestamp: p.timestamp,
+									coords: {
+										latitude: p.latitude,
+										longitude: p.longitude
+									}
+								});							
+							}
+							else 
+							{
+								successCallback(p);
+							}						
+						}
+						provider.getCurrentPosition(_successCallback, errorCallback, options);
+					}
+					catch(e)
+					{
+						//this is thrown when the request is denied
+						errorCallback({message:e,code:1});
+					}
+				}			
+			}
 			else if (typeof(navigator.geolocation) != "undefined") 
 			{
 				provider = navigator.geolocation;
 				pub.getCurrentPosition = function(successCallback, errorCallback, options)
 				{				
 					function _successCallback(p){
-					
+
 						//for mozilla geode,it returns the coordinates slightly differently
 						if (typeof(p.latitude) != "undefined") {
 							successCallback({
@@ -78,25 +120,7 @@ var geo_position_js=function()
 					}
 					provider.getCurrentPosition(_successCallback, errorCallback, options);
 				}
-			}
-			else if (typeof(window.google) != "undefined") 
-			{
-				provider = google.gears.factory.create('beta.geolocation');	
-				pub.getCurrentPosition = function(successCallback, errorCallback, options){			
-				
-					try
-					{
-						provider.getCurrentPosition(successCallback, errorCallback, options);
-					}
-					catch(e)
-					{
-						//this is thrown when the request is denied
-						errorCallback({message:e,code:1});
-					}
-					
-					
-				}			
-			}
+			}			
 			else if (typeof(Mojo) != "undefined" && typeof(Mojo.Service) != "undefined" && typeof(Mojo.Service.Request) != "Mojo.Service.Request") {
 				provider = true;
 				pub.getCurrentPosition = function(successCallback, errorCallback, options){
@@ -208,9 +232,20 @@ var geo_position_js=function()
 						//outside
 						bb_successCallback = successCallback;
 						bb_errorCallback = errorCallback;
-						//function needs to be a string according to
-						//http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx
-						blackberry.location.onLocationUpdate("handleBlackBerryLocation()");
+						
+						//http://docs.blackberry.com/en/developers/deliverables/11849/blackberry_location_onLocationUpdate_568407_11.jsp
+						//On BlackBerry devices running versions of BlackBerry® Device Software  earlier than version 4.6,
+						//this method must be passed as a string that is evaluated each time the location is refreshed. 
+						//On BlackBerry devices running BlackBerry Device Software version 4.6 or later, you can pass a string, 
+						//or use the method to register a callback function.
+						if(parseFloat(navigator.appVersion)>=4.6)
+						{
+							blackberry.location.onLocationUpdate(handleBlackBerryLocation());
+						}
+						else
+						{
+							blackberry.location.onLocationUpdate("handleBlackBerryLocation()");
+						}
 						blackberry.location.refreshLocation();
 						
 					}
