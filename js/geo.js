@@ -1,8 +1,8 @@
 /*!
  * 
- * Revision: $Rev$: 
- * Author: $Author$:
- * Date: $Date$:    
+ * $Rev$: 
+ * $Author$:
+ * $Date$:    
  */
 var bb_successCallback;
 var bb_errorCallback;

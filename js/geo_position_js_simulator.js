@@ -1,3 +1,9 @@
+/*!
+ * 
+ * $Rev$: 
+ * $Author$:
+ * $Date$:    
+ */
 var geo_position_js_simulator=function(){
 
 	var pub = {};
