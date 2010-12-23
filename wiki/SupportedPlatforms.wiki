@@ -3,7 +3,7 @@
 
 =Supported OS Platforms & Widget Frameworks=
 
-  * [#iPhone_OS_3.0 iPhone OS 3.0]
+  * [#iOS iOS]
   * [#Google_Gears Google Gears (Android, Windows Mobile)]
   * [#Device_OS_6 BlackBerry OS  6]
   * [#Device_Software_4.1 BlackBerry Device Software 4.1 and greater]
@@ -17,7 +17,7 @@
 *_If you think we are missing a platform please leave a comment at the bottom of this page. THANK YOU!_*
 
 
-==iPhone OS 3.0==
+==iOS==
 Since the  release of the OS 3.0 [http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariWebContent/GettingGeographicalLocations/GettingGeographicalLocations.html Geographic location classes] are available in javascript. As with native applications the user is asked for permission per session. *Note:* This doesn't work in the simulator that ships with the SDK.
 
 ==Google Gears==
