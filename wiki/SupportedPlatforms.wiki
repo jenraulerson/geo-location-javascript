@@ -5,7 +5,7 @@
 
   * [#iPhone_OS_3.0 iPhone OS 3.0]
   * [#Google_Gears Google Gears (Android, Windows Mobile)]
-  * [#Device OS 6 BlackBerry Device Software 6]
+  * [#Device_OS_6 BlackBerry OS  6]
   * [#Device_Software_4.1 BlackBerry Device Software 4.1 and greater]
   * [#Nokia_Web_Runtime_Toolkit Nokia Web Runtime Toolkit]
   * [#Bondi_Widgets_1.0 Bondi Widgets v1.0]
