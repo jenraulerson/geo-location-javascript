@@ -27,6 +27,14 @@ The error_call callback parameter provides at least:
 
 Both callback parameters can contain more information if the acutal platform provides more. 
 
+=== Opening Map Clients ===
+
+To open a map with latitude and longitude use: 
+{{{
+geo_position_js.showMap(latitude,longitude)
+}}}
+On Blackberry this open blackberry maps since google maps is not natively supported. For all other operating systems it simply opens a google maps URL that triggers the native maps client on iOS and android OS. Windows Mobile 7 currently has no mechnanism to launch the native Bing Maps ([http://stackoverflow.com/questions/4598189/url-conventions-for-maps-on-windows-phone-7 details])
+
 === Sample URLs ===
 
  * [http://www.merkwelt.com/people/stan/geo_js/sample.html Very simple page that provides a status alert box ]
